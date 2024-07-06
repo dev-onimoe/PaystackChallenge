@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "networklibrary",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dev-onimoe/NetworkLibrary.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "2a9dfa19d13a8ba2cfa66e4d02e9356cc9ee0269"
+      }
+    },
+    {
+      "identity" : "sdwebimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SDWebImage/SDWebImage.git",
+      "state" : {
+        "revision" : "be0bcd7823ce56629948491f2eaeaa19979514f7",
+        "version" : "5.19.4"
+      }
+    }
+  ],
+  "version" : 2
+}
