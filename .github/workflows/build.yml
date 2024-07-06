@@ -56,4 +56,4 @@ jobs:
       - name: Build
         env:
           scheme: ${{ 'default' }}
-        run: xcodebuild -project PaystackChallenge.xcodeproj -scheme PaystackChallenge build
+        run: xcodebuild -project PaystackChallenge.xcodeproj -scheme PaystackChallenge clean build
