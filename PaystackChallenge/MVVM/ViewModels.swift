@@ -32,7 +32,7 @@ class ViewModel : ObservableObject {
                         self?.repoResponse = Response(successful: true, object: totalItems)
                     }
                 }
-                //
+                
             }else {
                 DispatchQueue.main.async {
                     self?.repoResponse = Response(successful: false, message: errorString ?? "", object: nil)
