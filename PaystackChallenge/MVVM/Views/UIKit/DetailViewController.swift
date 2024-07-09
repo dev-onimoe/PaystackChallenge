@@ -25,6 +25,8 @@ class DetailViewController: UIViewController {
     
     func setup() {
         
+        repoName.text = repo?.name ?? ""
+        
         self.view.backgroundColor = .systemBackground
         
         let vv = UIView()

@@ -30,6 +30,20 @@ struct ContentView: View {
                         
                         
                     }
+                }else {
+                    
+                    VStack(spacing: 8) {
+                        
+                        Image(systemName: "xmark.circle.fill").frame(width: 70, height: 70).foregroundColor(.red)
+                        if let msg = viewModel.repoResponse?.message {
+                            
+                            msg.isEmpty ? Text("There was an error") : Text(msg)
+                        }
+                        Button("Try again", action: {
+                                
+                            viewModel.getData(page: 1)
+                        })
+                    }
                 }
                 
             }else {
@@ -85,7 +99,7 @@ struct repoListView: View {
                     .lineLimit(1)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-            }
+            }.tag(10)
         }.frame(height: 50)
     }
 }

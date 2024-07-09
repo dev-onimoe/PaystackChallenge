@@ -27,7 +27,11 @@ public class Owner : Codable {
     
 }
 
-public class APIRepo : Codable, Identifiable {
+public class APIRepo : Codable, Identifiable, Equatable {
+    public static func == (lhs: APIRepo, rhs: APIRepo) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
 
     public let id: Int
     public let name: String

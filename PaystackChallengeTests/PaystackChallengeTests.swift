@@ -6,31 +6,54 @@
 //
 
 import XCTest
+import ViewInspector
 @testable import PaystackChallenge
 
 final class PaystackChallengeTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testViewModelGetData() {
+        
+        let exp = expectation(description: "Got repository lists")
+        let viewModel = ViewModel()
+        let cancellable = viewModel.$repoResponse.sink(receiveValue: {response in
+            
+            if let obj = response?.object {
+                
+                XCTAssertTrue(obj is [APIRepo])
+                exp.fulfill()
+                
+            }else {
+                if let sucessful = response?.successful {
+                    if !sucessful {
+                        XCTAssertTrue(true)
+                        exp.fulfill()
+                    }else {
+                        XCTAssertTrue(false)
+                        exp.fulfill()
+                    }
+                }
+            }
+        })
+        viewModel.getData(page: 1)
+        wait(for: [exp], timeout: 10.0)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testRepoListViewData() {
+        
+        let rep = repoListView(repo: dummyRepo.first!)
+        
+        let string = try? rep.inspect().find(repoListView.self).actualView().inspect().hStack().vStack(2).text(0).string()
+        XCTAssertNotNil(string)
+        XCTAssertEqual(string, dummyRepo.first?.name)
+        
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testDetailRepresentableRepoData() {
+        
+        let dvc = DetailScreen(repo: dummyRepo.first!)
+        let repView = try? dvc.inspect().vStack().find(detailRepresentable.self).actualView()
+        
+        XCTAssertEqual(repView?.repo, dummyRepo.first)
     }
 
 }

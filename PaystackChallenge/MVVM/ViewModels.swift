@@ -15,7 +15,7 @@ class ViewModel : ObservableObject {
     
     func getData(page: Int) {
         
-        let query = url + "a" + "&page=1&per_page=50"
+        let query = url + "a" + appendage
         
         NetworkLibrary.shared.makeCall(url: query, completion: {[weak self] data, errorString in
             
@@ -31,6 +31,8 @@ class ViewModel : ObservableObject {
                     DispatchQueue.main.async {
                         self?.repoResponse = Response(successful: true, object: totalItems)
                     }
+                }else {
+                    self?.repoResponse = Response(successful: true, message: "Could not decode data, structure of model has changed", object: nil)
                 }
                 
             }else {
