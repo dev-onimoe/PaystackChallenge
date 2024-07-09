@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		C9B613BB2C3826DB00E950AC /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = C9B613BA2C3826DB00E950AC /* SDWebImage */; };
 		C9B613BD2C3826DB00E950AC /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C9B613BC2C3826DB00E950AC /* SDWebImageMapKit */; };
-		C9B613C32C39824600E950AC /* NetworkLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = C9B613C22C39824600E950AC /* NetworkLibrary */; };
-		C9B613E52C3DEE1700E950AC /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = C9B613E42C3DEE1700E950AC /* ViewInspector */; };
-		C9B613E72C3DEF0C00E950AC /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = C9B613E62C3DEF0C00E950AC /* ViewInspector */; };
+		C9B613EA2C3DFAE600E950AC /* NetworkLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = C9B613E92C3DFAE600E950AC /* NetworkLibrary */; };
 		C9C810642C35542500E4E995 /* PaystackChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C810632C35542500E4E995 /* PaystackChallengeApp.swift */; };
 		C9C810662C35542500E4E995 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C810652C35542500E4E995 /* ContentView.swift */; };
 		C9C810682C35542800E4E995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9C810672C35542800E4E995 /* Assets.xcassets */; };
@@ -68,10 +66,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9B613C32C39824600E950AC /* NetworkLibrary in Frameworks */,
+				C9B613EA2C3DFAE600E950AC /* NetworkLibrary in Frameworks */,
 				C9B613BD2C3826DB00E950AC /* SDWebImageMapKit in Frameworks */,
 				C9B613BB2C3826DB00E950AC /* SDWebImage in Frameworks */,
-				C9B613E52C3DEE1700E950AC /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +76,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9B613E72C3DEF0C00E950AC /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,8 +218,7 @@
 			packageProductDependencies = (
 				C9B613BA2C3826DB00E950AC /* SDWebImage */,
 				C9B613BC2C3826DB00E950AC /* SDWebImageMapKit */,
-				C9B613C22C39824600E950AC /* NetworkLibrary */,
-				C9B613E42C3DEE1700E950AC /* ViewInspector */,
+				C9B613E92C3DFAE600E950AC /* NetworkLibrary */,
 			);
 			productName = PaystackChallenge;
 			productReference = C9C810602C35542500E4E995 /* PaystackChallenge.app */;
@@ -244,7 +239,6 @@
 			);
 			name = PaystackChallengeTests;
 			packageProductDependencies = (
-				C9B613E62C3DEF0C00E950AC /* ViewInspector */,
 			);
 			productName = PaystackChallengeTests;
 			productReference = C9C810702C35542800E4E995 /* PaystackChallengeTests.xctest */;
@@ -302,8 +296,7 @@
 			mainGroup = C9C810572C35542500E4E995;
 			packageReferences = (
 				C9B613B82C3826B300E950AC /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				C9B613C12C39824600E950AC /* XCRemoteSwiftPackageReference "NetworkLibrary" */,
-				C9B613E32C3DEE1700E950AC /* XCRemoteSwiftPackageReference "ViewInspector" */,
+				C9B613E82C3DFAE600E950AC /* XCRemoteSwiftPackageReference "NetworkLibrary" */,
 			);
 			productRefGroup = C9C810612C35542500E4E995 /* Products */;
 			projectDirPath = "";
@@ -696,20 +689,12 @@
 				minimumVersion = 5.19.4;
 			};
 		};
-		C9B613C12C39824600E950AC /* XCRemoteSwiftPackageReference "NetworkLibrary" */ = {
+		C9B613E82C3DFAE600E950AC /* XCRemoteSwiftPackageReference "NetworkLibrary" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dev-onimoe/NetworkLibrary.git";
 			requirement = {
 				branch = main;
 				kind = branch;
-			};
-		};
-		C9B613E32C3DEE1700E950AC /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/nalexn/ViewInspector";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.11;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -725,20 +710,10 @@
 			package = C9B613B82C3826B300E950AC /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImageMapKit;
 		};
-		C9B613C22C39824600E950AC /* NetworkLibrary */ = {
+		C9B613E92C3DFAE600E950AC /* NetworkLibrary */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C9B613C12C39824600E950AC /* XCRemoteSwiftPackageReference "NetworkLibrary" */;
+			package = C9B613E82C3DFAE600E950AC /* XCRemoteSwiftPackageReference "NetworkLibrary" */;
 			productName = NetworkLibrary;
-		};
-		C9B613E42C3DEE1700E950AC /* ViewInspector */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9B613E32C3DEE1700E950AC /* XCRemoteSwiftPackageReference "ViewInspector" */;
-			productName = ViewInspector;
-		};
-		C9B613E62C3DEF0C00E950AC /* ViewInspector */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9B613E32C3DEE1700E950AC /* XCRemoteSwiftPackageReference "ViewInspector" */;
-			productName = ViewInspector;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

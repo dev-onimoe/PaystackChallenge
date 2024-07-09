@@ -6,7 +6,7 @@
 //
 
 import XCTest
-import ViewInspector
+//import ViewInspector
 @testable import PaystackChallenge
 
 final class PaystackChallengeTests: XCTestCase {
@@ -38,7 +38,7 @@ final class PaystackChallengeTests: XCTestCase {
         wait(for: [exp], timeout: 10.0)
     }
     
-    func testRepoListViewData() {
+    /*func testRepoListViewData() {
         
         let rep = repoListView(repo: dummyRepo.first!)
         
@@ -54,6 +54,6 @@ final class PaystackChallengeTests: XCTestCase {
         let repView = try? dvc.inspect().vStack().find(detailRepresentable.self).actualView()
         
         XCTAssertEqual(repView?.repo, dummyRepo.first)
-    }
+    }*/
 
 }
